@@ -76,6 +76,9 @@ class ArraysTest {
 	}
 	@Test
 	void binarySearchIntTest() {
-		//TODO
+		assertEquals(-6, Arrays.binarySearch(array, 200));
+		assertEquals(-1, Arrays.binarySearch(array, -5));
+		assertEquals(-5, Arrays.binarySearch(array, 50));
+		assertEquals(3, Arrays.binarySearch(array, 40));
 	}
 }
