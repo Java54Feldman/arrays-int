@@ -10,7 +10,8 @@ public class ArraysInt {
 	}
 
 	public static int[] insertNumber(int[] array, int index, int number) {
-		int[] arrayNew = Arrays.copyOf(array, array.length + 1);
+/* HW
+ 		int[] arrayNew = Arrays.copyOf(array, array.length + 1);
 		if (index == 0) {
 			System.arraycopy(array, 0, arrayNew, 1, array.length);
 		} else if (index != array.length) {
@@ -18,12 +19,17 @@ public class ArraysInt {
 			System.arraycopy(array, index, arrayNew, index + 1, array.length - index);
 		}
 		arrayNew[index] = number;
+*/
+		int[] arrayNew = new int[array.length + 1];
+		arrayNew[index] = number;
+		System.arraycopy(array,  0,  arrayNew,  0,  index);
+		System.arraycopy(array, index, arrayNew, index + 1, array.length - index);
 		return arrayNew;
 	}
 
 	public static int[] removeNumber(int[] array, int index) {
 		int[] arrayNew = new int[array.length - 1];
-		if (index == 0) {
+/* HW 	if (index == 0) {
 			System.arraycopy(array, 1, arrayNew, 0, arrayNew.length);
 		} else if (index == array.length - 1) {
 			System.arraycopy(array, 0, arrayNew, 0, index);
@@ -31,6 +37,9 @@ public class ArraysInt {
 			System.arraycopy(array, 0, arrayNew, 0, index);
 			System.arraycopy(array, index + 1, arrayNew, index, arrayNew.length - index);
 		}
+*/
+		System.arraycopy(array, 0, arrayNew, 0, index);
+		System.arraycopy(array, index + 1, arrayNew, index, array.length - index - 1);
 		return arrayNew;
 	}
 
